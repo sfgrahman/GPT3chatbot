@@ -33,16 +33,16 @@ def handle_user_input(user_input):
         conversation.append('USER: %s' % user_input)
         text_block = '\n'.join(conversation)
         prompt = open_file('prompt_chat.txt').replace('<<BLOCK>>', text_block)
-        prompt = prompt + '\nJAX:'
+        prompt = prompt + '\JOY:'
         response = gpt3_completion(prompt)
-        print('JAX:', response)
-        conversation.append('JAX: %s' % response)
+        #print('JOY:', response)
+        conversation.append('JOY: %s' % response)
         return response
 
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index2.html")
  
 
 @app.route("/get")
